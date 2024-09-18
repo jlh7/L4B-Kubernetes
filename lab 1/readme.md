@@ -17,11 +17,11 @@ Images:
 
 - **Goal**: Understand Pods and how to expose them via Services.
 - **Practices**:
-  1. **Create Client and Server Pods** using YAML manifests and `kubectl`.
-  2. **Expose Server Pods** using ClusterIP, NodePort, and LoadBalancer Services.
-  3. Use **labels and selectors** to differentiate Client and Server Pods.
-  4. Manually **scale Pods** to verify communication between Client and Server using Services.
-  5. **Verify load balancing** and traffic distribution across Server Pods.
+  - **Create Client and Server Pods** using YAML manifests and `kubectl`.
+  - **Expose Server Pods** using ClusterIP, NodePort, and LoadBalancer Services.
+  - Use **labels and selectors** to differentiate Client and Server Pods.
+  - Manually **scale Pods** to verify communication between Client and Server using Services.
+  - **Verify load balancing** and traffic distribution across Server Pods.
 
 ---
 
@@ -29,11 +29,11 @@ Images:
 
 - **Goal**: Configure ingress, egress, and secure communication across the architecture.
 - **Practices**:
-  1. **Install an Ingress Controller** (NGINX or Traefik) to manage inbound traffic for the Client.
-  2. Create **Ingress resources** to route traffic to the Client Pods.
-  3. Set **Egress policies** from the Server to control outbound traffic towards the database.
-  4. Define **Network Policies** to isolate Client, Server, and Database Pods according to the firewall rules in your diagram.
-  5. **Test traffic flows** between Client and Server Pods, and between Server and the Database.
+  - **Install an Ingress Controller** (NGINX or Traefik) to manage inbound traffic for the Client.
+  - Create **Ingress resources** to route traffic to the Client Pods.
+  - Set **Egress policies** from the Server to control outbound traffic towards the database.
+  - Define **Network Policies** to isolate Client, Server, and Database Pods according to the firewall rules in your diagram.
+  - **Test traffic flows** between Client and Server Pods, and between Server and the Database.
 
 ---
 
@@ -41,11 +41,11 @@ Images:
 
 - **Goal**: Organize and manage resources using labels and namespaces.
 - **Practices**:
-  1. **Create Labels and Selectors** to identify the Client and Server Pods.
-  2. Create **Namespaces** for separating environments (e.g., client-app, server-app, database).
-  3. Apply **Network Policies** to control inter-namespace communication.
-  4. Deploy the architecture into different namespaces and validate **cross-namespace access**.
-  5. **Move resources** between namespaces and test communication integrity.
+  - **Create Labels and Selectors** to identify the Client and Server Pods.
+  - Create **Namespaces** for separating environments (e.g., client-app, server-app, database).
+  - Apply **Network Policies** to control inter-namespace communication.
+  - Deploy the architecture into different namespaces and validate **cross-namespace access**.
+  - **Move resources** between namespaces and test communication integrity.
 
 ---
 
@@ -53,11 +53,11 @@ Images:
 
 - **Goal**: Manage the scaling and health of Client and Server Deployments.
 - **Practices**:
-  1. Create a **Deployment for the Server** with multiple replicas and verify scaling.
-  2. Perform **rolling updates and rollbacks** on both Client and Server Deployments.
-  3. Set up and verify **Readiness, Liveness, and Startup probes** for Client and Server Pods.
-  4. Implement **horizontal scaling** for both Client and Server Deployments based on demand.
-  5. **Optimize resource requests** for both Deployments to manage CPU and memory consumption.
+  - Create a **Deployment for the Server** with multiple replicas and verify scaling.
+  - Perform **rolling updates and rollbacks** on both Client and Server Deployments.
+  - Set up and verify **Readiness, Liveness, and Startup probes** for Client and Server Pods.
+  - Implement **horizontal scaling** for both Client and Server Deployments based on demand.
+  - **Optimize resource requests** for both Deployments to manage CPU and memory consumption.
 
 ---
 
@@ -65,11 +65,11 @@ Images:
 
 - **Goal**: Deploy stateful services, including the database, and services that run on all nodes.
 - **Practices**:
-  1. Deploy the **database** using a **StatefulSet** (e.g., MySQL with master-slave setup for write-read operations).
-  2. Set up **Persistent Volume Claims (PVCs)** for the StatefulSet to store persistent data.
-  3. Deploy a **DaemonSet** for logging or monitoring agents across all nodes in the cluster.
-  4. Verify the distribution of **DaemonSet Pods** across nodes and test their functionality.
-  5. Compare the **behavior of StatefulSets and Deployments** to understand the differences for the database.
+  - Deploy the **database** using a **StatefulSet** (e.g., MySQL with master-slave setup for write-read operations).
+  - Set up **Persistent Volume Claims (PVCs)** for the StatefulSet to store persistent data.
+  - Deploy a **DaemonSet** for logging or monitoring agents across all nodes in the cluster.
+  - Verify the distribution of **DaemonSet Pods** across nodes and test their functionality.
+  - Compare the **behavior of StatefulSets and Deployments** to understand the differences for the database.
 
 ---
 
@@ -77,11 +77,11 @@ Images:
 
 - **Goal**: Manage persistent storage and sensitive data for the database and application configuration.
 - **Practices**:
-  1. Create **Persistent Volumes (PVs)** and **PVCs** for both the Client and Server components.
-  2. **Mount PVCs** into Pods and verify persistent storage across restarts.
-  3. Create and manage **ConfigMaps** for non-sensitive configuration (e.g., environment variables).
-  4. Manage **Secrets** for sensitive data (e.g., database passwords) and use them in Pods.
-  5. Test **ConfigMap and Secret usage** by injecting them into Client and Server Pods as volumes or environment variables.
+  - Create **Persistent Volumes (PVs)** and **PVCs** for both the Client and Server components.
+  - **Mount PVCs** into Pods and verify persistent storage across restarts.
+  - Create and manage **ConfigMaps** for non-sensitive configuration (e.g., environment variables).
+  - Manage **Secrets** for sensitive data (e.g., database passwords) and use them in Pods.
+  - Test **ConfigMap and Secret usage** by injecting them into Client and Server Pods as volumes or environment variables.
 
 ---
 
@@ -89,8 +89,8 @@ Images:
 
 - **Goal**: Secure the application, optimize resource usage, and monitor the system.
 - **Practices**:
-  1. Configure **Role-Based Access Control (RBAC)** for controlling access to the Client, Server, and Database Pods.
-  2. Define **Roles, RoleBindings, and ServiceAccounts** to manage permissions across namespaces.
-  3. Set **resource requests and limits** for both Client and Server Pods to optimize resource usage.
-  4. Install **Prometheus and Grafana** to monitor Pod and Service metrics.
-  5. Implement **Fluentd or ELK stack** for centralized logging, particularly for Server and Database Pods.
+  - Configure **Role-Based Access Control (RBAC)** for controlling access to the Client, Server, and Database Pods.
+  - Define **Roles, RoleBindings, and ServiceAccounts** to manage permissions across namespaces.
+  - Set **resource requests and limits** for both Client and Server Pods to optimize resource usage.
+  - Install **Prometheus and Grafana** to monitor Pod and Service metrics.
+  - Implement **Fluentd or ELK stack** for centralized logging, particularly for Server and Database Pods.
